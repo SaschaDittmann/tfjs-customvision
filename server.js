@@ -1,8 +1,9 @@
 let express = require("express");
 let app = express();
+const port = 5000 || process.env.port;
 
 app.use(express.static("./static"));
 
-app.listen(81, function() {
-    console.log("Listening on port 81");
+app.listen(port, function() {
+    console.log(`Listening on port ${port}`);
 });

@@ -1,5 +1,5 @@
 {
-  "name": "tfjs-customvision",
+  "name": "hawai",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -8,17 +8,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SaschaDittmann/tfjs-customvision.git"
+    "url": "git+https://github.com/filiptronicek/HawAI.git"
   },
-  "author": "Sascha Dittmann",
+  "author": "Filip Troníček & Michal Kučera",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SaschaDittmann/tfjs-customvision/issues"
+    "url": "https://github.com/filiptronicek/HawAI/pulls"
   },
-  "homepage": "https://github.com/SaschaDittmann/tfjs-customvision#readme",
+  "homepage": "https://github.com/filiptronicek/HawAI/",
   "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {},
-  "description": "Use the power of Machine Learning to diagnose TB from chest x-rays."
+  "description": "A Tensorflow app for detecting if a pizza is a hawaiian one."
 }
