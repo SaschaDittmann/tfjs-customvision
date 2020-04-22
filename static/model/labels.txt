@@ -1,2 +1,3 @@
-Normal
-Tuberculosis
+hawaii
+Negative
+pizza
