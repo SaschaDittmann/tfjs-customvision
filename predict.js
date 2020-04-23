@@ -11,17 +11,18 @@ $("#image-selector").change(function () {
 });
 
 let model;
-$(document).ready(async function () {
+
+async function loadModel() {
   $(".progress-bar").show();
   console.log("Loading model...");
   model = await tf.loadGraphModel("model/model.json");
   console.log("Model loaded.");
   $(".progress-bar").hide();
-});
+}
 
 $("#predict-button").click(async function () {
   let image = $("#selected-image").get(0);
-
+  await loadModel();
   // Pre-process the image
   console.log("Loading image...");
   let tensor = tf.browser
