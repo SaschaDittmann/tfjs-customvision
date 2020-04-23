@@ -41,7 +41,7 @@ $("#predict-button").click(async function () {
       };
     })
     .sort(function (a, b) {
-      return b.probability - a.probability;
+      return b.probability - a.probability; // sort classes by probability
     })
     .slice(0, 2);
 
