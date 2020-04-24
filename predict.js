@@ -20,7 +20,7 @@ $(document).ready(async function () {
 });
 
 $("#predict-button").click(async function () {
-  let image = $("#selected-image").get(0);
+  let image = $("#selected-image").get(0); //get the image from the form
 
   // Pre-process the image
   console.log("Loading image...");
