@@ -21,7 +21,7 @@ $(document).ready(async function () {
 
 $("#predict-button").click(async function () {
   let image = $("#selected-image").get(0); //get the image from the form
-
+  if(image.src !== "") {
   // Pre-process the image
   console.log("Loading image...");
   let tensor = tf.browser
@@ -51,4 +51,14 @@ $("#predict-button").click(async function () {
       `<li>${p.className}: ${p.probability.toFixed(6)}</li>`
     );
   });
+} else {
+  $("#prediction-list").empty();
+    $("#prediction-list").append(
+      `<strong class="select-err">Select an image pretty please</strong>`
+    );
+    $(".select-err").css("color", "red");
+    setTimeout(() => {
+      $(".select-err").css("color", "black");
+    }, 500);
+}
 });
