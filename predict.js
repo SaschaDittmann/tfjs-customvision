@@ -30,6 +30,7 @@ $("#predict-button").click(async function () {
     .expandDims()
     .toFloat()
     .reverse(-1); // RGB -> BGR
+  tensor.expandDims().print();
   let predictions = await model.predict(tensor).data();
   console.log(predictions);
   let top5 = Array.from(predictions)
