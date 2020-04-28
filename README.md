@@ -4,4 +4,4 @@ This example shows you how to use a Machine Learning, which was created with the
 
 Authors: [@aellopos](https://github.com/aellopos/) & [@filiptronicek](https://github.com/filiptronicek)
 
-Special thanks to [@CreepyAmateur](https://github.com/CreepyAmateur/) for testing our model
+Special thanks to [@svobodavl](https://github.com/svobodavl/) for testing our model
