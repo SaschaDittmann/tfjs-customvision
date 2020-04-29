@@ -51,7 +51,7 @@ $("#predict-button").click(async function () {
       console.log(`${p.className}: ${100 * p.probability.toFixed(6)}%`);
       if (p.probability === top5[0].probability) {
         $("#prediction-list").append(
-          `<div>That's a ${p.className}: ${100 * p.probability.toFixed(6)}%</div>`
+          `<div>That's ${p.className}: ${100 * p.probability.toFixed(6)}%</div>`
         );
       }
     });
