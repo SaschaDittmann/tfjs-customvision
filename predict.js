@@ -45,12 +45,15 @@ $("#predict-button").click(async function () {
       return b.probability - a.probability; // sort classes by probability
     })
     .slice(0, 2);
-
+  
   $("#prediction-list").empty();
   top5.forEach(function (p) {
+    console.log(`${p.className}: ${100*(p.probability.toFixed(6))}%`);
+    if(p.probability > 0.4) {
     $("#prediction-list").append(
       `<li>${p.className}: ${100*(p.probability.toFixed(6))}%</li>`
     );
+    }
   });
 } else {
   $("#prediction-list").empty();
