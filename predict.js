@@ -21,42 +21,42 @@ $(document).ready(async function () {
 
 $("#predict-button").click(async function () {
   let image = $("#selected-image").get(0); //get the image from the form
-  if(image.src !== "") {
-  // Pre-process the image
-  console.log("Loading image...");
-  let tensor = tf.browser
-    .fromPixels(image, 3)
-    .resizeNearestNeighbor([224, 224]) // change the image size
-    .expandDims()
-    .toFloat()
-    .reverse(-1); // RGB -> BGR
-  tensor.expandDims().print();
-  let predictions = await model.predict(tensor).data();
-  console.log(predictions);
-  let top5 = Array.from(predictions)
-    .map(function (p, i) {
-      // this is Array.map
-      return {
-        probability: p,
-        className: TARGET_CLASSES[i], // we are selecting the value from the obj
-      };
-    })
-    .sort(function (a, b) {
-      return b.probability - a.probability; // sort classes by probability
-    })
-    .slice(0, 2);
-  
-  $("#prediction-list").empty();
-  top5.forEach(function (p) {
-    console.log(`${p.className}: ${100*(p.probability.toFixed(6))}%`);
-    if(p.probability > 0.4) {
-    $("#prediction-list").append(
-      `<li>${p.className}: ${100*(p.probability.toFixed(6))}%</li>`
-    );
-    }
-  });
-} else {
-  $("#prediction-list").empty();
+  if (image.src !== "") {
+    // Pre-process the image
+    console.log("Loading image...");
+    let tensor = tf.browser
+      .fromPixels(image, 3)
+      .resizeNearestNeighbor([224, 224]) // change the image size
+      .expandDims()
+      .toFloat()
+      .reverse(-1); // RGB -> BGR
+    tensor.expandDims().print();
+    let predictions = await model.predict(tensor).data();
+    console.log(predictions);
+    let top5 = Array.from(predictions)
+      .map(function (p, i) {
+        // this is Array.map
+        return {
+          probability: p,
+          className: TARGET_CLASSES[i], // we are selecting the value from the obj
+        };
+      })
+      .sort(function (a, b) {
+        return b.probability - a.probability; // sort classes by probability
+      })
+      .slice(0, 2);
+    $("#prediction-list").empty();
+
+    top5.forEach(function (p) {
+      console.log(`${p.className}: ${100 * p.probability.toFixed(6)}%`);
+      if (p.probability > 0.4) {
+        $("#prediction-list").append(
+          `<li>${p.className}: ${100 * p.probability.toFixed(6)}%</li>`
+        );
+      }
+    });
+  } else {
+    $("#prediction-list").empty();
     $("#prediction-list").append(
       `<strong class="select-err">Select an image pretty please</strong>`
     );
@@ -64,5 +64,5 @@ $("#predict-button").click(async function () {
     setTimeout(() => {
       $(".select-err").css("color", "black");
     }, 500);
-}
+  }
 });
