@@ -1,5 +1,5 @@
 TARGET_CLASSES = {
-  0: "Hawaiian pizza",
-  1: "Not-A-pizza",
-  2: "Other stinky pizza"
+  0: "a Hawaiian pizza",
+  1: "not a pizza",
+  2: "another stinky pizza"
 };

@@ -49,9 +49,9 @@ $("#predict-button").click(async function () {
 
     top5.forEach(function (p) {
       console.log(`${p.className}: ${100 * p.probability.toFixed(6)}%`);
-      if (p.probability > 0.4) {
+      if (p.probability === top5[0].probability) {
         $("#prediction-list").append(
-          `<li>${p.className}: ${100 * p.probability.toFixed(6)}%</li>`
+          `<div>That's a ${p.className}: ${100 * p.probability.toFixed(6)}%</div>`
         );
       }
     });
