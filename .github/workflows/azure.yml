@@ -19,9 +19,10 @@ jobs:
 
     - name: Azure CLI - Upload Files
       uses: azure/CLI@v1
+      env:
+        AZURE_STATIC_WEBSITE: ${{ secrets.AZURE_STATIC_WEBSITE }}
       with:
         azcliversion: latest
         inlineScript: |
-          az account show
-          az storage -h
-          ls -la $GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE/static
+          az storage copy -s . -d "$AZURE_STATIC_WEBSITE" --recursive
