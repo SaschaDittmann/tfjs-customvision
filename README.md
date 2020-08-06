@@ -4,6 +4,14 @@ This example shows you how to use a Machine Learning, which was created with the
 
 The [Tuberculosis X-Ray images](https://www.kaggle.com/kmader/pulmonary-chest-xray-abnormalities) used in this example, are from the Kaggle website and are not published with this repository.
 
+## About
+
+For more details about this project, please checkout my [YouTube Video](https://youtu.be/WFUL_oRT3nk):
+
+[<img src="https://img.youtube.com/vi/WFUL_oRT3nk/maxresdefault.jpg" width="75%">](https://youtu.be/WFUL_oRT3nk)
+
+## Setup 
+
 Prepare the node environments:
 ```sh
 $ npm install
