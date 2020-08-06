@@ -20,9 +20,8 @@ jobs:
     - name: Azure CLI - Upload Files
       uses: azure/CLI@v1
       env:
-        AZURE_STATIC_WEBSITE: ${{ secrets.AZURE_STATIC_WEBSITE }}
+        STORAGE_ACCOUNT_NAME: ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }}
       with:
         azcliversion: latest
         inlineScript: |
-          cd $GITHUB_WORKSPACE/static
-          az storage copy -s . -d "$AZURE_STATIC_WEBSITE" --recursive
+          az storage blob sync -s $GITHUB_WORKSPACE/static -c '$web' --account-name "$STORAGE_ACCOUNT_NAME"
