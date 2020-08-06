@@ -23,3 +23,7 @@ Run the local web server script:
 ```sh
 $ node server.js
 ```
+
+## Demo
+
+If you wan't, you can test the deployed application under under [https://tfjs-imageclassification.azureedge.net](https://tfjs-imageclassification.azureedge.net).
