@@ -6,17 +6,22 @@ on:
       - dev
 
 jobs:
-  build-and-deploy:
+  deploy-to-azure:
     runs-on: ubuntu-latest
     steps:
     - name: Azure Login
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Azure CLI script
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Azure CLI - Upload Files
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
+        azcliversion: latest
         inlineScript: |
           az account show
           az storage -h
+          ls -la $GITHUB_WORKSPACE
