@@ -1,2 +1,5 @@
-Normal
-Tuberculosis
+CruzAltar
+FlorDeCempasúchil
+PanDeMuerto
+PerroAltar
+VelasAltar
