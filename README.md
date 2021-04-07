@@ -1,3 +1,7 @@
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![](https://ga4gh.azurewebsites.net/api?repo=tfjs-customvision)](https://github.com/SaschaDittmann/gaforgithub)
+
 # TensorFlow.js Example: Using an Azure Custom Vision model to detect tuberculosis in a web browser
 
 This example shows you how to use a Machine Learning, which was created with the [Microsoft Azure Custom Vision](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/) service, in a web browser application.
