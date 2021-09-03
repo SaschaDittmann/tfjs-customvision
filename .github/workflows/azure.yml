@@ -1,6 +1,7 @@
 name: Deploy To Azure Storage Static Website
 
 on:
+  workflow_dispatch:
   push:
     branches:    
       - dev
