@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/SaschaDittmann/tfjs-customvision#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {},
   "description": "Use the power of Machine Learning to diagnose TB from chest x-rays."
